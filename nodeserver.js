@@ -18,7 +18,12 @@ app.use(express.json());
 //   console.error('MongoDB connection error:', err);
 // });
 
-mongoose.connect(process.env.MONGODB_URI)
+// mongoose.connect(process.env.MONGODB_URI)
+//     .then(() => console.log('Connected to MongoDB'))
+//     .catch((err) => console.error('MongoDB connection error:', err));
+
+mongoose.connect('mongodb+srv://nmdharineesh2004:mongodb123@cluster0.1ebq3.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0'
+)
     .then(() => console.log('Connected to MongoDB'))
     .catch((err) => console.error('MongoDB connection error:', err));
 
