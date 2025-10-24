@@ -99,7 +99,7 @@ app.patch('/questions/:id/reply', async (req, res) => {
 });
 
 
-app.post('/appointments', async (req, res) => {
+app.post('/appointmentsbook', async (req, res) => {
     const appointments = new Appointment(req.body);
     await appointments.save();
     res.json(appointments);
