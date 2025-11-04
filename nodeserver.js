@@ -52,6 +52,11 @@ const appointmentSchema = new mongoose.Schema({
 //   module.exports = Appointment;
 
 // Endpoint to get all questions
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the AgriCare backend API 🌱');
+});
+
 app.get('/questions', async (req, res) => {
   const questions = await Question.find();
   res.json(questions);
@@ -146,9 +151,11 @@ app.post('/appointmentsbook', async (req, res) => {
     }
   });
 
-
-app.listen(10000, () => {
-  console.log('Server is running on port 5500');
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
+
+
 
 
